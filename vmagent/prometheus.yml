@@ -1,0 +1,38 @@
+scrape_configs:
+    - job_name: node
+      scrape_interval: 5s
+      static_configs:
+          - targets: ['localhost:9100']
+            labels:
+                instance: '${instance_name}'           # 节点命名
+                group: '${group_name}'                   # 分组类型： Frontend Node、Backend Node、Service Node、Core Relay、Edge Relay、Core Outbound、Edge Outbound
+                location: '${location_name}'                  # 地理位置：hongkong, japan, singapore 等
+                description: TEST             # 描述信息
+                # 系统标签
+                os: 'Debain'                  # 系统类型 Debian MAC WIN 等等
+    - job_name: blackbox
+      scrape_interval: 5s
+      metrics_path: /probe
+      params:
+          module: [tcping]
+      file_sd_configs:
+          - files:
+                - /usr/local/bin/vmagent/endpoint.yml
+      relabel_configs:
+          - source_labels: [__address__]
+            target_label: __param_target
+          - target_label: __address__
+            replacement: localhost:9115
+    - job_name: blackbox_icmp
+      scrape_interval: 5s
+      metrics_path: /probe
+      params:
+          module: [icmp]
+      file_sd_configs:
+          - files:
+                - /usr/local/bin/vmagent/icmp.yml
+      relabel_configs:
+          - source_labels: [__address__]
+            target_label: __param_target
+          - target_label: __address__
+            replacement: localhost:9115

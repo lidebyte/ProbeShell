@@ -1,0 +1,60 @@
+- targets:
+    - 'hb-ct-v4-icmp.ddnstoday.xyz'
+  labels:
+    name: '湖北电信'
+    code: 'HB'
+    city: 'HuBei'
+    isp: 'China Telecom'
+    ip: 'IPv4'
+    domestic: 'true'
+    instance: '${instance_name}' # 改成自己的机器名
+- targets:
+    - 'hb-cu-v4-icmp.ddnstoday.xyz'
+  labels:
+    name: '湖北联通'
+    code: 'HB'
+    city: 'HuBei'
+    isp: 'China Unicom'
+    ip: 'IPv4'
+    domestic: 'true'
+    instance: '${instance_name}' # 改成自己的机器名
+- targets:
+    - 'hb-cm-v4-icmp.ddnstoday.xyz'
+  labels:
+    name: '湖北移动'
+    code: 'HB'
+    city: 'HuBei'
+    isp: 'China Mobile'
+    ip: 'IPv4'
+    domestic: 'true'
+    instance: '${instance_name}' # 改成自己的机器名
+- targets:
+    - 'sd-ct-v4-icmp.ddnstoday.xyz'
+  labels:
+    name: '山东电信'
+    code: 'SD'
+    city: 'ShanDong'
+    isp: 'China Telecom'
+    ip: 'IPv4'
+    domestic: 'true'
+    instance: '${instance_name}' # 改成自己的机器名
+- targets:
+    - 'sd-cu-v4-icmp.ddnstoday.xyz'
+  labels:
+    name: '山东联通'
+    code: 'SD'
+    city: 'ShanDong'
+    isp: 'China Unicom'
+    ip: 'IPv4'
+    domestic: 'true'
+    instance: '${instance_name}' # 改成自己的机器名
+- targets:
+    - 'sd-cm-v4-icmp.ddnstoday.xyz'
+  labels:
+    name: '山东移动'
+    code: 'SD'
+    city: 'ShanDong'
+    isp: 'China Mobile'
+    ip: 'IPv4'
+    domestic: 'true'
+    instance: '${instance_name}' # 改成自己的机器名
